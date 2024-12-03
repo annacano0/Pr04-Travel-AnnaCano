@@ -4,7 +4,7 @@ import ExperienceShow from './ExperienceShow.vue'
 </script>
 
 <template>
-  <h1>This is a Country component</h1>
+  <h2>This is a Country component</h2>
   <ExperienceCard></ExperienceCard>
   <ExperienceShow></ExperienceShow>
 </template>

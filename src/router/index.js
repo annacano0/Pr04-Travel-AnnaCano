@@ -9,6 +9,16 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
     },
+    {
+      path: '/destination/:id/:slug',
+      name: 'destination.show',
+      component: () => import('@/views/DestinationShow.vue'),
+      props: (route) => ({
+        ...route.params,
+        slug: route.params.slug,
+        id: parseInt(route.params.id),
+      }),
+    },
   ],
 })
 
