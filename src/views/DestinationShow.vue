@@ -16,11 +16,13 @@ const destination = destinations.find((destination) => destination.id === id)
     <p>{{ destination.description }}</p>
   </div>
 
-  <div>
+  <div class="experiences">
     <h2>Top experiencies in {{ destination.name }}</h2>
-    <article v-for="experience in destination.experiences" :key="experience.slug">
-      <img :src="'../../public/images/' + experience.image" :alt="experience.image" />
-      <p>{{ experience.name }}</p>
-    </article>
+    <div class="cards">
+      <article class="card" v-for="experience in destination.experiences" :key="experience.slug">
+        <img :src="'../../public/images/' + experience.image" :alt="experience.image" />
+        <p class="card__text">{{ experience.name }}</p>
+      </article>
+    </div>
   </div>
 </template>
