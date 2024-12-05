@@ -1,5 +1,5 @@
 <script setup>
-import { RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router'
 import { destinations } from '../assets/data.json'
 </script>
 
@@ -10,7 +10,7 @@ import { destinations } from '../assets/data.json'
     <router-link
       v-for="destination in destinations"
       :key="destination.id"
-      :to="{ name: 'DestinationShow', params: { slug: destination.slug, id: destination.id } }"
+      :to="{ name: 'destination.show', params: { slug: destination.slug, id: destination.id } }"
     >
       {{ destination.name }}
     </router-link>
@@ -19,4 +19,5 @@ import { destinations } from '../assets/data.json'
     <RouterView />
   </div>
 </template>
+
 <style></style>

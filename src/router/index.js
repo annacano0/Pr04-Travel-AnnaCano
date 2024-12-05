@@ -16,7 +16,7 @@ const router = createRouter({
       props: (route) => ({
         ...route.params,
         slug: route.params.slug,
-        id: parseInt(route.params.id),
+        id: parseInt(route.params.id, 10),
       }),
     },
   ],
