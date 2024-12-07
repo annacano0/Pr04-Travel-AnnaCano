@@ -14,8 +14,11 @@ import { destinations } from '../assets/data.json'
     >
       {{ destination.name }}
     </router-link>
+    <router-link :to="{ name: 'dashboard' }"> <p>Dashboard</p> </router-link>
+    <router-link :to="{ name: 'itb' }"> <p>ITB</p> </router-link>
   </nav>
   <div class="container">
+    <p></p>
     <RouterView />
   </div>
 </template>

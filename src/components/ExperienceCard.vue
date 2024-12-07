@@ -24,7 +24,7 @@ defineProps({
           :src="'/images/' + experience.image"
           :alt="experience.name"
         />
-        <p class="card__text">{{ experience.name }}</p>
+        <span class="card__text">{{ experience.name }}</span>
       </article>
     </div>
   </div>

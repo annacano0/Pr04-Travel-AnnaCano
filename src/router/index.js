@@ -7,17 +7,29 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView,
+      component: () => import('@/views/HomeView.vue'),
+
     },
     {
       path: '/destination/:id/:slug',
       name: 'destination.show',
       component: () => import('@/views/DestinationShow.vue'),
+
       props: (route) => ({
         ...route.params,
         slug: route.params.slug,
         id: parseInt(route.params.id),
       }),
+    },
+    {
+      path: '/itb',
+      name: 'itb',
+      component: () => import('@/views/ItbView.vue'),
+    },
+    {
+      path: '/dashboard',
+      name: 'dashboard',
+      component: () => import('@/views/DashboardView.vue'),
     },
   ],
 })
