@@ -14,7 +14,13 @@ const router = createRouter({
       path: '/destination/:id/:slug',
       name: 'destination.show',
       component: () => import('@/views/DestinationShow.vue'),
-
+      children:[
+        {
+          path: ':experienceSlug',
+          name: 'experience.show',
+          component: () => import('@/views/ExperienceShow.vue'),
+        },
+      ],
       props: (route) => ({
         ...route.params,
         slug: route.params.slug,
