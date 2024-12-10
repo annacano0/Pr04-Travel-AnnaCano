@@ -1,5 +1,7 @@
 <script setup>
-defineProps({
+import { defineProps } from 'vue';
+
+const props = defineProps({
   experiences: {
     type: Array,
     required: true,
@@ -8,6 +10,10 @@ defineProps({
     type: String,
     required: true,
   },
+  destinationId:{
+    type:Number,
+    required:true
+  }
 });
 </script>
 
@@ -15,17 +21,16 @@ defineProps({
   <div v-if="experiences.length" class="experiences">
     <h3>Experiences in {{ destinationName }}</h3>
     <div class="cards">
-      <article
+      <router-link :to="`/destination/${destinationId}/${destinationName.toLocaleLowerCase()}/${experience.slug}`"   
         class="card"
         v-for="experience in experiences"
-        :key="experience.slug"
-      >
+        :key="experience.slug">
         <img
           :src="'/images/' + experience.image"
           :alt="experience.name"
         />
         <span class="card__text">{{ experience.name }}</span>
-      </article>
+      </router-link>
     </div>
   </div>
   <div v-else>

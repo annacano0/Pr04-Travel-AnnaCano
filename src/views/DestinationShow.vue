@@ -14,13 +14,8 @@ watch(
   () => route.params.id,
   (newId) => {
     id.value = parseInt(newId);
-    destination.value = destinations.find((destination) => destination.id === id.value);
   }
 );
-//TODO: acabar dfe implementar la navegacion a las experiencias
-const goToExperience = () =>{
-  console.log("going to experience")
-}
 
 const goBack = () => {
   router.back();
@@ -38,7 +33,9 @@ const goBack = () => {
     <ExperienceCard 
       :experiences="destination.experiences" 
       :destinationName="destination.name" 
+      :destinationId="destination.id"
     />
+    <router-view/>
   </div>
   <div v-else>
     <p>Loading destination...</p>
