@@ -21,7 +21,7 @@ const props = defineProps({
   <div v-if="experiences.length" class="experiences">
     <h3>Experiences in {{ destinationName }}</h3>
     <div class="cards">
-      <router-link :to="`/destination/${destinationId}/${destinationName.toLocaleLowerCase()}/${experience.slug}`"   
+      <router-link :to="{name:'experience.show', params:{experienceSlug:experience.slug}}"   
         class="card"
         v-for="experience in experiences"
         :key="experience.slug">
