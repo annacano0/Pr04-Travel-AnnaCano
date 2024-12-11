@@ -10,6 +10,7 @@ const id = ref(parseInt(route.params.id));
 
 const destination = ref(destinations.find((destination) => destination.id === id.value));
 
+//watch comprova si canvia el id de route.paramns.id y actialitza el valor de is per "refrescar" la pagina
 watch(
   () => route.params.id,
   (newId) => {
